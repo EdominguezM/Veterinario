@@ -1,0 +1,44 @@
+<div class="row">
+
+  <div class="col-md offset-md-2">
+
+    <%= form_with(model: pet_history, local: true) do |form| %>
+      <% if pet_history.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(pet_history.errors.count, "error") %> prohibited this pet_history from being saved:</h2>
+
+          <ul>
+            <% pet_history.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field">
+        <%= form.label :weigth, "Peso" %>
+        <%= form.number_field :weigth %>
+      </div>
+
+      <div class="field">
+        <%= form.label :height, "altura" %>
+        <%= form.number_field :height %>
+      </div>
+
+      <div class="field">
+        <%= form.label :diagnosis, "diagnostico" %>
+        <%= form.text_field :diagnosis %>
+      </div>
+    <div class="field">
+        <%= form.label :pet_id %>
+      <!--<%= form.text_field :pet_id %>-->
+        <%= form.collection_select :pet_id, @pets, :id,  :name %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit "Guardar", class:"btn btn-success"%>
+         <%= link_to 'Volver', pets_path, class:"btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

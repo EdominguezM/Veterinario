@@ -1,0 +1,66 @@
+<div class="row">
+
+  <div class="col-md offset-md-2">
+    <p id="notice"><%= notice %></p><hr>
+
+
+    <p>
+      <strong>Nombre:</strong>
+      <%= @pet.name %>
+    </p>
+
+    <p>
+      <strong>Raza:</strong>
+      <%= @pet.breed %>
+    </p>
+
+    <p>
+      <strong>Fecha Nacimiento:</strong>
+      <%= @pet.birthdate %>
+    </p>
+
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Altura</th>
+          <th>Peso</th>
+          <th>Fecha de Control</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @pet_histories.each do |pet_history| %>
+          <tr>
+            <td><%= pet_history.height %></td>
+            <td><%= pet_history.weigth %></td>
+            <td><%= pet_history.created_at %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Peso Máximo</th>
+          <th>Altura Máxima</th>
+          <th>Peso Promedio</th>
+          <th>Altura Promedio</th>
+        </tr>
+      </thead>
+
+      <tbody>
+          <tr>
+            <td><%= @weigth_max %> Kg.</td>
+            <td><%= @height_max%> Cms</td>
+            <td><%= @weigth_avr%> Kg</td>
+            <td><%= @height_avr %> Cms</td>
+          </tr>
+      </tbody>
+    </table>
+
+    <%= link_to 'Volver', :back, class:"btn btn-light"%>
+    
+  </div>
+</div>

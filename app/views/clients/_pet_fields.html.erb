@@ -1,0 +1,19 @@
+<div class="nested-fields">
+  <div class="field">
+    <%= f.label :name, "Nombre"%>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :breed , "Raza"%>
+    <%= f.text_field :breed %>
+  </div>
+
+  <div class="field">
+    <%= f.label :birthdate , "Fecha Nacimiento"%>
+    <%= f.date_field :birthdate %>
+  </div>
+
+
+  <%= link_to_remove_association "Remover mascota", f %>
+</div>
