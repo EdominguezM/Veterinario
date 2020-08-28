@@ -14,9 +14,10 @@ class ClientsController < ApplicationController
     @pets = @client.pets
   
     @pet = @pets.find_by(params[:pet_id])
-
-    @weigth_max= @pet.pet_histories.maximum(:weigth)
-    @height_max = @pet.pet_histories.maximum(:height)
+    if @pet != nil
+      @weigth_max= @pet.pet_histories.maximum(:weigth)
+      @height_max = @pet.pet_histories.maximum(:height)
+    end
   end
 
   

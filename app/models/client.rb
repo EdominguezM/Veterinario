@@ -3,6 +3,8 @@ class Client < ApplicationRecord
   has_many :pet_histories, :through => :pet
  
   validates :name, presence: true
+  
+
   accepts_nested_attributes_for :pets, allow_destroy: true
  
   def to_s

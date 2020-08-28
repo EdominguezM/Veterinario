@@ -3,6 +3,7 @@ class Pet < ApplicationRecord
   has_many :pet_histories, dependent: :destroy
   
   validates :name, presence: true
+ 
 
   accepts_nested_attributes_for :pet_histories, allow_destroy: true
   
